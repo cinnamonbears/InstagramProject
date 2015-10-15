@@ -5,7 +5,6 @@ router.get('/', function(req, res) {
 
   res.render('userProfile', {
     title: 'This is a User Profile!',
-    welcome: 'Welcome user'
   })
 })
 

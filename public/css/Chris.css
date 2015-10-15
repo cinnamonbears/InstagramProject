@@ -1,0 +1,40 @@
+h2{
+  text-align:left;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  color: #80BD02;
+}
+
+.paddingDiv {
+ padding-left: 220px;
+}
+.paddingDiv img{
+  border-radius: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+  left:-110px;
+}
+.paddingDiv p{
+  color: #80BD02;
+}
+.formClass{
+  text-align: center;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+  left:-110px;
+
+}
+/*.paddingDiv svg{
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  position:relative;
+  left:-110px;
+}*/

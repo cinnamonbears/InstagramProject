@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.ls-Sidebar{
+  position:fixed;
+  border-radius: 25px;
+  padding 10px;
+  color: #05D4C1;
+  background-color: #333333;
+}
+.ls-FontGreen{
+  font-size: 18px;
+  color: #ffffff;
+}
+
+ul.navigation{
+list-style-type: none;
+text-align: center;
+padding: 15px;
+}
+
+.navigation li {
+border-radius: 15px;
+border-width: 1px;
+background-color: #80BD02;
+padding: 3px;
+margin: 10px;
+padding-left: 20px;
+padding-right: 20px;
+}
+
+.navigation li:hover {
+background-color: #0A4E4B;
+}
+.navigation li a {
+  text-decoration: none;
+}
+
+.navigation li a:hover {
+  text-decoration: underline;
+}
+
+.ls-Background{
+  background-color: #4c4c4c;
+}
+h1{
+  text-align: center;
+  padding-top: 25px;
+  font-size: 35px;
+  font-style: italic;
+  color: #80BD02;
+}
