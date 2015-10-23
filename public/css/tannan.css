@@ -1,0 +1,27 @@
+/* Tannan's CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.ls-Sidebar_T{ 
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  border-radius: 25px;
+  padding: 10px;
+  color: #05D4C1;
+  background-color: #333333;
+}
+
+.intropara{
+  margin-top: 3%;
+  margin-bottom: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  text-align: center;
+  font-size: 22px;
+  color: #80BD02;
+}
