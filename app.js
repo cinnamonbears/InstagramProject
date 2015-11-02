@@ -16,7 +16,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRoutes)
 app.use('/userProfile', userRoutes)
-app.use('/userDashboard', DashboardRoutes)
+//app.use('/userDashboard', DashboardRoutes)
+app.get('/userDashboard', function(req, res){
+
+	res.render('userDashboard', {
+		title: 'Dashboard',
+		layout: 'auth_base'
+	})
+
+})
 app.use('/search', searchRoutes)
 
 app.listen(port)
