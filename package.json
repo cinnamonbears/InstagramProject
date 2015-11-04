@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/cinnamonbears/InstagramProject/issues"
   },
-  "homepage": "https://github.com/cinnamonbears/InstagramProject#readme"
+  "homepage": "https://github.com/cinnamonbears/InstagramProject#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1",
+    "node": "^0.0.0"
+  },
+  "devDependencies": {}
 }
