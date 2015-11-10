@@ -18,7 +18,9 @@ app.use('/', indexRoutes)
 app.use('/userProfile', userRoutes)
 //app.use('/userDashboard', DashboardRoutes)
 app.get('/userDashboard', function(req, res){
-
+	var options = {
+		url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + ACCESS_TOKEN
+	}
 	res.render('userDashboard', {
 		title: 'Dashboard',
 		layout: 'auth_base'
