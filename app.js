@@ -7,18 +7,23 @@ var express 				= require('express')
 	, userRoutes			= require('./routes/userProfile')
   , dashboardRoutes			= require('./routes/userDashboard')
   , searchRoutes			= require('./routes/search')
+	, savedSearch = require('./routes/savedSearches')
+	, cfg = require('./config')
+	, session = require('express-session')
+
+var ACCESS_TOKEN = ''
 
 var app = express();
 
 app.engine('handlebars', exphbs({defaultLayout: 'base'}));
 app.set('view engine', 'handlebars');
 
-// app.use(session({
-//   cookieName: 'session',
-//   secret: 'eg[isfd-8yF9-7w2315df{}+Ijsli;;to8',
-//   resave: false,
-//   saveUninitialized: true
-// }));
+app.use(session({
+  cookieName: 'session',
+  secret: 'eg[isfd-8yF9-7w2315df{}+Ijsli;;to8',
+  resave: false,
+  saveUninitialized: true
+}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -46,12 +51,20 @@ app.use('/userDashboard', dashboardRoutes)// function(req, res){
 //	})
 //})
 
-
-
-
-
-
 app.use('/search', searchRoutes)
+app.get('/savedSearches', function(req, res){
+	res.render('savedSearches', {
+		title: 'Saved Searches',
+		layout: 'auth_base'
+	})
+})
+
+app.get('/search', function(req, res){
+	res.render('search', {
+		title: 'Search',
+		layout: 'auth_base',
+	})
+})
 
 app.listen(port)
 

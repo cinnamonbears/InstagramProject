@@ -3,8 +3,8 @@ var router = express.Router();
 
 router.get('/', function(req, res) {
 
-  res.render('search', {
-    title: 'Search',
+  res.render('savedSearches', {
+    title: 'Saved Searches'
   })
 })
 
