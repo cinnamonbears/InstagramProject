@@ -3,7 +3,16 @@
 
   <div class="ls-squeeze">
     <div class="box-wrap ls-clear">
-      <div class="box">
+{{#each feed}}
+<div class="box">
+  <img src="{{this.images.standard_resolution.url}}" alt="" />
+  <button class="button pull--left">Likes: {{this.likes.count}}</button>
+  <button class="button pull--right">Comments: {{ this.comments.count}}</button>
+</div>
+
+{{/each}}
+
+      <!-- <div class="box">
         <img src="LoganImages/Charmander.png">
         <div class="group-button ls-clear">
           <button class="button pull--left">Yup</button>
@@ -23,6 +32,6 @@
           <button class="button pull--left">Yup</button>
           <button class="button pull--right">Nope!</button>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>

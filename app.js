@@ -29,27 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRoutes)
 app.use('/userProfile', userRoutes)
-app.use('/userDashboard', dashboardRoutes)// function(req, res){
-// // 	var options = {
-// // 		url: 'https://api.instagram.com/v1/users/self/feed?access_token=' +  + req.session.access_token
-// // 	}
-// // req.get(options, function(error, response, body){
-// // 	try{
-// // 		var feed = JSON.parse(body)
-// //       if(feed.meta.code > 200){
-// //         return next(feed.meta.error_message)
-// // 			}
-// // 	}catch(err){
-// // 		return next(err)
-// // 	}
-// 		res.render('userDashboard', {
-// 			title: 'Dashboard',
-// 			layout: 'auth_base',
-// 		//	feed: feed.data
-// 		})
-//
-//	})
-//})
+app.use('/userDashboard', dashboardRoutes)
 app.use('/savedSearches', savedSearch)
 app.use('/search', searchRoutes)
 
