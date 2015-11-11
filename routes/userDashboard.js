@@ -4,8 +4,9 @@ var router = express.Router();
 router.get('/', function(req, res) {
 
   res.render('userDashboard', {
-    title: 'This is a User Dash!',
-    welcome: 'Welcome user'
+    title: 'Dashboard',
+    welcome: 'Welcome',
+    layout: 'auth_base'
   })
 })
 
