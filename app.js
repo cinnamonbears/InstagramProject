@@ -50,21 +50,8 @@ app.use('/userDashboard', dashboardRoutes)// function(req, res){
 //
 //	})
 //})
-
+app.use('/savedSearches', savedSearch)
 app.use('/search', searchRoutes)
-app.get('/savedSearches', function(req, res){
-	res.render('savedSearches', {
-		title: 'Saved Searches',
-		layout: 'auth_base'
-	})
-})
-
-app.get('/search', function(req, res){
-	res.render('search', {
-		title: 'Search',
-		layout: 'auth_base',
-	})
-})
 
 app.listen(port)
 
