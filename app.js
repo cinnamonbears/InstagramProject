@@ -6,6 +6,8 @@ var express 				= require('express')
 	, userRoutes			= require('./routes/userProfile')
   , DashboardRoutes			= require('./routes/userDashboard')
   , searchRoutes			= require('./routes/search')
+	, savedSearch = require('./routes/savedSearches')
+	, cfg = require('./config')
 
 var app = express();
 
@@ -27,7 +29,16 @@ app.get('/userDashboard', function(req, res){
 	})
 
 })
-app.use('/search', searchRoutes)
+
+app.get('/savedSearches', function(req, res) {
+	res.render('savedSearches')
+})
+
+app.get('/search', function(req, res) {
+  res.render('search')
+})
+
+
 
 app.listen(port)
 

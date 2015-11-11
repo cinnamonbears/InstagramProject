@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header{
+  font-size: 40px;
+}
+
+.searchbox{
+  position: static;
+  text-align: center;
+  border-color: #FFFFFF;
+  margin-top: 30px;
+  margin-left:
+}
+
+.search{
+  width: 40%;
+  border-radius: 15px 0px 0px 15px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  outline: none;
+  border-style: solid;
+  border-color: #80BD02;
+}
+
+.submit{
+    border-radius: 0px 15px 15px 0px;
+    border-style: solid;
+    border-color: #80BD02;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    width: 85px;
+    background-color: #80BD02;
+    color: #FFFFFF;
+}
+
+input:hover.submit{
+    background-color: #0A4E4B;
+    border-color: #0A4E4B;
+}
+
+.saveSearch{
+    border-style: solid;
+    border-radius: 25px;
+    border-color: #80BD02;
+    width: 150px;
+    background-color: #80BD02;
+    color: #FFFFFF;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    margin-bottom: 15px;
+    margin-left: 8px;
+}
+
+input:hover.saveSearch{
+    background-color: #0A4E4B;
+    border-color: #0A4E4B;
+}
+
+input.search {
+    background-image:url("https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/search.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:left;
+}
+
+p.recent{
+  color: #80BD02;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 150px;
+  font-size: 22px;
+}
+
+div.recent{
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #80BD02;
+  float: left;
+  color: #FFFFFF;
+  margin-left: 300px;
+  margin-top: 75px;
+  padding: 10px;
+}
+
+hr{
+  width: 50%;
+  color: #0A4E4B;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+
+.results1{
+  height: 300px;
+  width: 250px;
+  float: left;
+  border: groove 3px  #80BD02;
+}
+
+.results2{
+  height: 300px;
+  width: 250px;
+  margin-left: 25px;
+  float: left;
+  border: groove 3px  #80BD02;
+}
+
+.results3{
+  height: 300px;
+  width: 250px;
+  float: right;
+  border: groove 3px  #80BD02;
+}
+
+div.top{
+  width: 800px;
+  height: 350px;
+  padding-top:50px;
+  padding-left: auto;
+  padding-right: auto;
+}
+
+div.bot{
+  width: 800px;
+  height: 350px;
+  padding-top:10px;
+  padding-left: auto;
+  padding-right: auto;
+  margin-top: 35px;
+}
+
+div.centerResults{
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
