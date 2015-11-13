@@ -10,10 +10,13 @@ var express 				= require('express')
 	, savedSearch = require('./routes/savedSearches')
 	, cfg = require('./config')
 	, session = require('express-session')
+	, bodyParser = require('body-parser')
 
 var ACCESS_TOKEN = ''
 
 var app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.engine('handlebars', exphbs({defaultLayout: 'base'}));
 app.set('view engine', 'handlebars');
