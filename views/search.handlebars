@@ -1,8 +1,22 @@
 <div class="searchbox">
 		<form class = "searches" action="" method = "post">
 			<div class="">
-    	<input name="search" type="text"></input>
-			<input name="submit" type="submit" value="Search"></input>
+    	<input class="search" name="search" type="text"></input>
+			<input class="submit" name="submit" type="submit" value="Search"></input>
 		</div>
 		</form>
+</div>
+
+<div class="ls-squeeze">
+	<div class="box-wrap ls-clear">
+{{#each feed}}
+<div class="box">
+<img src="{{this.images.standard_resolution.url}}" alt="" />
+<button class="button pull--left">Likes: {{this.likes.count}}</button>
+<button class="button pull--right">Comments: {{ this.comments.count}}</button>
+</div>
+
+{{/each}}
+
+	</div>
 </div>

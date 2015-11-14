@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var request = require('request')
 var bodyParser = require('body-parser')
 
+var query
 
 router.post('/', function(req, res){
-	console.log(req.body)
-	var query = req.body.search
-	console.log(query)
+	query = req.body.search
 	res.redirect('search')
 })
 
@@ -17,17 +17,18 @@ router.get('/', function(req, res) {
 	request.get(options, function(error, response, body){
 		try{
 			var feed = JSON.parse(body)
-			if(feed.meta.code > 200){
-				return next(feed.meta.error_message)
+				if(feed.meta.code > 200){
+					return next(feed.meta.error_message)
+				}
+			}catch(err){
+				return next(err)
 			}
-		}catch(err){
-			return next(err)
-		}
+			res.render('search', {
+				title: 'Search',
+				layout: 'auth_base',
+				feed: feed.data
+			})
 	})
-	res.render('search', {
-		title: 'Search',
-		layout: 'auth_base',
 	})
-})
 
 module.exports = router
