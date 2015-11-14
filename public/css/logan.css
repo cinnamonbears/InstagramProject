@@ -98,3 +98,11 @@ footer {
   border-top: solid 1px #CCC;
   padding: 10px 0;
 }
+
+.ls-searchWord{
+  text-align: left;
+  padding-top: 5px;
+  font-size: 25px;
+  font-style: italic;
+  color: #80BD02;
+}
