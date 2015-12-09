@@ -12,6 +12,10 @@
 			<p>
 				<div class="ls-searchWord">
 					Showing Results for: {{searchWord}}
+					<form class="" action="/search/savedSearches/addSearch" method="post">
+						<input type="hidden" name="search" value="{{searchWord}}">
+						<button type="submit">Save Search</button>
+					</form>
 				</div>
 			</p>
 

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var request = require('request')
 var bodyParser = require('body-parser')
+var Users = require('../models/users')
 
 var query = "";
 
@@ -52,17 +53,11 @@ router.get('/', function(req, res, next) {
 })
 
 router.post('/savedSearches/addSearch', function(req, res){
+	console.log('Post received')
 	var search = req.body.search
 	var userId = req.session.userId
 	Users.addSearch(userId, search, function(){
-		res.redirect('/search')
-	})
-})
-
-router.post('/savedSearches/removeSearch', function(req, res){
-	var search = req.body.search
-	var userId = req.session.userId
-	Users.removeSearch(userId, search, function(){
+		console.log('Returned from query')
 		res.redirect('/search')
 	})
 })

@@ -26,9 +26,11 @@ exports.find = function(id, callback) {
 }
 
 exports.addSearch = function(userId, search, callback){
+  console.log('UserId: ', userId)
+  console.log('Search: ', search)
   var collection = db.get().collection('users')
   collection.update(
-    {'_id': ObjectId(userId)},
+    {'_id': userId},
     {$push:{searchs: search}},
     function(err, result){
       assert.equal(err, null)
@@ -41,7 +43,7 @@ exports.addSearch = function(userId, search, callback){
 exports.removeSearch = function(userId, search, callback){
   var collection = db.get().collection('users')
   collection.update(
-    {'_id': ObjectId(userId)},
+    {'_id': userId},
     {$pull:{searchs: search}},
     function(err, result){
       assert.equal(err, null)
