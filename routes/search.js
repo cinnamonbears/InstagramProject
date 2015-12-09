@@ -51,4 +51,20 @@ router.get('/', function(req, res, next) {
 	 }
 })
 
+router.post('/savedSearches/addSearch', function(req, res){
+	var search = req.body.search
+	var userId = req.session.userId
+	Users.addSearch(userId, search, function(){
+		res.redirect('/search')
+	})
+})
+
+router.post('/savedSearches/removeSearch', function(req, res){
+	var search = req.body.search
+	var userId = req.session.userId
+	Users.removeSearch(userId, search, function(){
+		res.redirect('/search')
+	})
+})
+
 module.exports = router

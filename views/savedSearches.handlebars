@@ -1,6 +1,17 @@
-<div class="searchbox">
-		<form action="">
+<!-- <div class="searchbox">
+		<form action="/savedSearchs/addSearch" method="post">
     	<input class="search" type="text"></input>
 			<input class="submit" type="submit" value="Search"></input>
 		</form>
-</div>
+</div> -->
+
+{{#if user.search}}
+	<h2>Saved Searches</h2>
+	{{#each user.search}}
+			<form class="" action="/savedSearchs/removeSearch" method="post">
+			{{this}}
+		<input type="hidden" name="search" value="{{this}}">
+		<button type="submit" name="">Remove</button>
+	</form>
+	{{/each}}
+{{/if}}

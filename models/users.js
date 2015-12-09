@@ -24,3 +24,29 @@ exports.find = function(id, callback) {
     callback(document)
   })
 }
+
+exports.addSearch = function(userId, search, callback){
+  var collection = db.get().collection('users')
+  collection.update(
+    {'_id': ObjectId(userId)},
+    {$push:{searchs: search}},
+    function(err, result){
+      assert.equal(err, null)
+      assert.equal(1, result.result.n)
+      console.log('Added a Search')
+      callback(result)
+    })
+}
+
+exports.removeSearch = function(userId, search, callback){
+  var collection = db.get().collection('users')
+  collection.update(
+    {'_id': ObjectId(userId)},
+    {$pull:{searchs: search}},
+    function(err, result){
+      assert.equal(err, null)
+      assert.equal(1, result.result.n)
+      console.log('Added a Search')
+      callback(result)
+    })
+}
