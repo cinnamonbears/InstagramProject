@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var querystring = require('querystring')
 var request = require('request')
+var Users = require('../models/users')
 
 var cfg = require('../config')
 
@@ -41,8 +42,23 @@ router.get('/auth/finalize', function(req, res) {
 
   request.post(options, function(error, response, body) {
     var data = JSON.parse(body)
+    var user = data.user
+
     req.session.access_token = data.access_token
-    res.redirect('/userDashboard')
+    req.session.userId = data.user.id
+
+    user._id = user.id
+    delete user.id
+
+    Users.find(user._id, function(document) {
+      if (!document) {
+        Users.insert(user, function(result) {
+          res.redirect('/userDashboard')
+        })
+      } else {
+        res.redirect('/userDashboard')
+      }
+    })
   })
 })
 
