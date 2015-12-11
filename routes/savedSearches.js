@@ -26,7 +26,7 @@ router.get('/', function(req, res) {
   }
 })
 
-router.post('/savedSearches/removeSearch', function(req, res){
+router.post('/removeSearch', function(req, res){
 	console.log('Post received')
 	var search = req.body.search
 	var userId = req.session.userId

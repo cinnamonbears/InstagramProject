@@ -2,10 +2,12 @@
 {{#if user.searchs}}
 	<h2>Saved Searches</h2>
 	{{#each user.searchs}}
-			<form class="" action="savedSearches/removeSearch" method="post">
+	<p>
+			<form class="" action="/savedSearches/removeSearch" method="post">
 			{{this}}
 		<input type="hidden" name="search" value="{{this}}">
 		<button type="submit">Remove</button>
+	</p>
 	</form>
 	{{/each}}
 {{/if}}
