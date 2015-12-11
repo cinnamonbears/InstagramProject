@@ -63,7 +63,7 @@ exports.update = function(user, callback){
   //update the user
   collection.update(
     {'_id': user._id},
-    user,
+    {$set:user },
     function(err, result){
       assert.equal(err, null)
       assert.equal(1, result.result.n) // how many records were modified
