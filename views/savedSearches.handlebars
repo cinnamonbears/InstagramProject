@@ -4,14 +4,15 @@
 			<input class="submit" type="submit" value="Search"></input>
 		</form>
 </div> -->
-
-{{#if user.search}}
+<div class = "paddingDiv">
+{{#if user.searchs}}
 	<h2>Saved Searches</h2>
-	{{#each user.search}}
-			<form class="" action="/savedSearchs/removeSearch" method="post">
-			{{this}}
+	{{#each user.searchs}}
+			<form class="" action="/savedSearches/removeSearch" method="post">
+			{{{user.searchs}}}
 		<input type="hidden" name="search" value="{{this}}">
 		<button type="submit" name="">Remove</button>
 	</form>
 	{{/each}}
 {{/if}}
+</div>

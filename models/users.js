@@ -1,5 +1,6 @@
 var assert = require('assert')
 var db = require('../db')
+var ObjectId = require('mongodb').ObjectId
 
 exports.insert = function(user, callback) {
   // Get the users collection
@@ -51,4 +52,17 @@ exports.removeSearch = function(userId, search, callback){
       console.log('Added a Search')
       callback(result)
     })
+}
+
+exports.update = function(user, callback){
+  //get the users collection
+  var collection = db.get().collection('users')
+  user._id = ObjectId(user._id)
+  //update the user
+  collection.update({'_id': user._id}, user, function(err, result){
+    assert.equal(err, null)
+    assert.equal(1, result.result.n) // how many records were modified
+    console.log('Updated 1 document in the users collection')
+    callback(result)
+  })
 }
