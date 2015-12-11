@@ -42,6 +42,8 @@ exports.addSearch = function(userId, search, callback){
 }
 
 exports.removeSearch = function(userId, search, callback){
+  console.log('UserId: ', userId)
+  console.log('Search: ', search)
   var collection = db.get().collection('users')
   collection.update(
     {'_id': userId},
@@ -49,7 +51,7 @@ exports.removeSearch = function(userId, search, callback){
     function(err, result){
       assert.equal(err, null)
       assert.equal(1, result.result.n)
-      console.log('Added a Search')
+      console.log('removed a Search')
       callback(result)
     })
 }
@@ -57,12 +59,15 @@ exports.removeSearch = function(userId, search, callback){
 exports.update = function(user, callback){
   //get the users collection
   var collection = db.get().collection('users')
-  user._id = ObjectId(user._id)
+  //user._id = user._id
   //update the user
-  collection.update({'_id': user._id}, user, function(err, result){
-    assert.equal(err, null)
-    assert.equal(1, result.result.n) // how many records were modified
-    console.log('Updated 1 document in the users collection')
-    callback(result)
+  collection.update(
+    {'_id': user._id},
+    user,
+    function(err, result){
+      assert.equal(err, null)
+      assert.equal(1, result.result.n) // how many records were modified
+      console.log('Updated 1 document in the users collection')
+      callback(result)
   })
 }

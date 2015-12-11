@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
           if(!document) return res.redirect('/')
           res.render('userProfile', {
             title: 'User Profile!',
-            welcome: 'Welcome, '+document.username + "!",
+            welcome: 'Welcome, '+ document.username + "!",
             layout: 'auth_base',
             user: document
           })
@@ -24,10 +24,11 @@ router.post('/', function(req, res){
   console.log('Post received')
   Users.update(user, function(result){
     console.log('User Update Successful')
+    console.log('User', user)
     res.render('userProfile', {
-      //title: 'User Profile!',
-      //welcome: 'Welcome, '+user.username + "!",
-      //layout: 'auth_base',
+      title: 'User Profile!',
+      welcome: 'Welcome, '+user.username + "!",
+      layout: 'auth_base',
       user: user,
       success: 'User updated successfully!'
     })

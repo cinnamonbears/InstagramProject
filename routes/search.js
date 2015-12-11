@@ -13,7 +13,7 @@ router.post('/', function(req, res){
 })
 
 router.get('/', function(req, res, next) {
-	console.log('Search Page: ' +query)
+	console.log('Search Page: ' + query)
 	var options = {
 		url: 'https://api.instagram.com/v1/tags/' + query + '/media/recent?access_token=' + req.session.access_token
 	}
