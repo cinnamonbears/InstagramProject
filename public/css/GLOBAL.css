@@ -52,3 +52,8 @@ h1{
   font-style: italic;
   color: #80BD02;
 }
+
+.SearchLetters .submit{
+  width: 155px;
+  font-size: 15px;
+}

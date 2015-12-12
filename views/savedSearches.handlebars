@@ -3,11 +3,11 @@
 	<h2>Saved Searches</h2>
 	{{#each user.searchs}}
 	<p>
-		<form class = "savedSearch_D" action="/search" method = "post">
+		<form class = "SearchLetters" action="/search" method = "post">
 		<input class="search" name="search" type="hidden" value="{{this}}"></input>
 		<input class="submit" name="submit" type="submit" value="{{this}}"></input>
 		</form>
-		<form class="savedSearch_D" action="/savedSearches/removeSearch" method="post">
+		<form class="" action="/savedSearches/removeSearch" method="post">
 		<input type="hidden" name="search" value="{{this}}">
 		<button type="submit">X</button>
 	</form>
