@@ -59,11 +59,10 @@ input:hover.saveSearch{
     border-color: #0A4E4B;
 }
 
-input.search {
-    background-image:url("https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/search.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position:left;
+.search {
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 20px;
 }
 
 p.recent{
