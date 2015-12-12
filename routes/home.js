@@ -7,6 +7,9 @@ var Users = require('../models/users')
 var cfg = require('../config')
 
 router.get('/', function(req, res) {
+  if(req.session.access_token != null){
+    req.session.access_token = null;
+  }
   res.render('home', {
     title: 'Home',
     welcome: 'Welcome to the site!'

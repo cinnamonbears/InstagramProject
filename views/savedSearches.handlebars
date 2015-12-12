@@ -1,19 +1,17 @@
-
-	<h2>Saved Searches</h2>
-<div class="paddingDiv">
+<div class = "paddingDiv">
 {{#if user.searchs}}
-	<p><h2>Saved Searches</h2></p>
+	<h2>Saved Searches</h2>
 	{{#each user.searchs}}
 	<p>
 		<form class = "" action="/search" method = "post">
-			<input class="search" name="search" type="hidden" value="{{this}}"></input>
-			<input class="submit" name="submit" type="submit" value="{{this}}"></input>
+		<input class="search" name="search" type="hidden" value="{{this}}"></input>
+		<input class="submit" name="submit" type="submit" value="{{this}}"></input>
 		</form>
 		<form class="" action="/savedSearches/removeSearch" method="post">
-			<input type="hidden" name="search" value="{{this}}">
-			<button type="submit">Remove</button>
-		</form>
+		<input type="hidden" name="search" value="{{this}}">
+		<button type="submit">Remove</button>
 	</p>
+	</form>
 	{{/each}}
 {{/if}}
 </div>

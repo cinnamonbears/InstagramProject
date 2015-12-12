@@ -11,8 +11,8 @@ var express 				= require('express')
 	, cfg = require('./config')
 	, session = require('express-session')
 	, bodyParser = require('body-parser')
-	,db = require('./db')
-	,Users = require('./models/users')
+	, db = require('./db')
+	, Users = require('./models/users')
 
 var ACCESS_TOKEN = ''
 
